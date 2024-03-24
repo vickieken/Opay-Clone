@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 10px 0px 10px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 450px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            margin-bottom: 10px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            width: 550px;
+            padding: 15px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .history {
+            color: #12a963;
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+        form {
+            display: flex;
+            flex-flow: column;
+        }
+
+         label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 0px;
+            font-size: 13px;
+            color: #000000;
+        }
+
+        form input {
+            border: none;
+            padding: 13px;
+            background: #fcfcfc;
+            border-radius: 10px;
+            margin: 0px 0px 10px 0px;
+            width: 510px;
+            margin-top: 10px;
+        }
+
+
+        form ::placeholder {
+            font-size: 11px;
+            color: #9c9c9c;
+        }
+
+        form .confirm-btn {
+            width: 80%;
+            padding: 15px;
+            border: none;
+            color: white;
+            background: #12a96343;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        form .confirm-btn:hover {
+            background: #12a963;
+        }
+
+        form .confirm-btn.show-index {
+            z-index: -1;
+        }
+
+         form h6 {
+            font-weight: lighter;
+            color: #181818;
+            margin-bottom: 15px;
+            text-align: start;
+            font-size: 11px;
+        }
+
+        .form-con {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .top-up {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 95%;
+            margin: auto;
+            margin-top: 10px;
+            z-index: 1;
+            transition: all 1s ease-in-out;
+        }
+
+        .top-up.show-index {
+            z-index: -1;
+        }
+
+        .top-up p input {
+            width: 100%;
+        }
+
+        .top-up p h6 {
+            text-align: right;
+            font-size: 11px;
+        }
+
+        /* Networks */
+
+        .networks {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px 5px 10px; 
+            width: 500px;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+
+        .packages {
+            margin: auto;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            padding: 5px 10px 5px 10px; 
+            width: 100%;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            transition: all 1s ease-in-out;
+            flex-flow: column;
+        }
+
+        .packages .pack-p {
+            font-size: 14px;
+        }
+
+        /* .networks:hover .network-options {
+            visibility: visible;
+            cursor: pointer;
+        } */
+
+        .networks .img {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .packages .img {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .networks .img:hover {
+            cursor: pointer;
+        }
+
+        .packages .img:hover {
+            cursor: pointer;
+        }
+
+
+        .networks .img .fa {
+            font-size: 11px;
+            color: #9c9c9c;
+        }
+
+        .packages .img .fa {
+            font-size: 11px;
+            color: #9c9c9c;
+        }
+
+        .networks input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+        }
+
+        .packages input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+        }
+
+        .networks .fa-user {
+            color: white;
+            background: #12a963;
+            padding: 7px;
+            border-radius: 50%;
+        }
+
+        .packages .fa-user {
+            color: white;
+            background: #12a963;
+            padding: 7px;
+            border-radius: 50%;
+        }
+
+        .networks .network-options {
+            position: absolute;
+            top: 90%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            color: #00000059;
+            height: 330px;
+            overflow-y: auto;
+        }
+
+        .packages .package-options {
+            position: absolute;
+            top: 90%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            color: #00000059;
+            height: 330px;
+            overflow-y: auto;
+        }
+
+        .package-options p .price {
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #181818;
+        }
+
+        .network-options.show {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .package-options.show {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .networks .network-options img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .packages .package-options img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .networks .network-options p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .packages .package-options p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .networks .network-options p:hover {
+            cursor: pointer;
+        }
+
+        .packages .package-options p:hover {
+            cursor: pointer;
+        }
+
+        .networks .network-options p .input {
+            width: 20px;
+        }
+
+        .packages .package-options p .input {
+            width: 20px;
+        }
+
+        .networks .network-options p label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .packages .package-options p label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .networks .img img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .packages .img img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .choose-package {
+            background: #9c9c9c0e;
+            padding: 10px 15px 0px 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .choose-package h6 {
+            color: #9c9c9c;
+        }
+
+        /* package plans*/
+
+
+        
+    </style>
+
+    <div class="container">
+
+        <header>
+            <a href="index.html">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; TV
+            </a>
+
+            <a href="/" class="history">History</a>
+
+        </header>
+
+        <form method="post">
+            <h6 style="margin-left: 25px;">Select Provider</h6>
+                <div class="networks">
+                    <div class="choose-network img">
+                        <img src="./cable-img/startimes.jpeg" alt="startimes icon">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+
+                    <!--Network Options-->
+
+                    <div class="network-options">
+                        <p>
+                            <label for="Dstv">
+                                <img src="./cable-img/dstv.jpeg">
+                                <span>Dstv</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Dstv">
+                        </p>
+
+                        <p>
+                            <label for="Gotv">
+                                <img src="./cable-img/gotv.jpg">
+                                <span>Gotv</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Gotv">
+                        </p>
+
+                        <p>
+                            <label for="Showmax">
+                                <img src="./cable-img/showmax.png">
+                                <span>Showmax</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Showmax">
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <img src="./cable-img/startimes.jpeg">
+                                <span>Startimes</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Startimes">
+                        </p>
+
+                    </div>
+                </div>
+
+            <div class="top-up">
+                <p>
+                    <label for="smartnumber">SmartCard Number</label>
+                    <input type="number" name="number" placeholder="Input your smart number here">
+                </p>
+
+                <div class="packages">
+                    <p class="pack-p">Packages</p>
+                    <div class="choose-package img">
+                        <h6>Please select your package</h6>
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+
+                    <!--Package Options-->
+
+                    <div class="package-options">
+                        <p>
+                            <label for="Dstv">
+                                <span>Gotv Supa</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Dstv">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Gotv">
+                                <span>Gotv Max</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Gotv">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Showmax">
+                                <span>Gotv Jolli</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Showmax"> 
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <span>Gotv Jinja</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Startimes">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <span>Gotv Lite</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Startimes">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <span>Gotv Lite(Quarterly)</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Startimes">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <span>Gotv Lite(Annual)</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Startimes">
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="Startimes">
+                                <span>Gotv Supa Plus</span>
+                            </label>
+                            <span class="price">
+                                <i class="fa fa-naira-sign"></i>1,700
+                                <input class="input" type="radio" name="package" id="Startimes">
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="confirm-btn">confirm</button>
+
+            
+        </form>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="network.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

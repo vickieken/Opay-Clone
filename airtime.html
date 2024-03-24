@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airtime page</title>
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 10px 0px 10px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 450px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            margin-bottom: 10px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            width: 550px;
+            padding: 15px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .history {
+            color: #12a963;
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+         label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 0px;
+            font-size: 13px;
+            color: #000000;
+        }
+
+        form input {
+            border: 1px solid #e4e4e42b;
+            padding: 13px;
+            background: #fcfcfc;
+            border-radius: 10px;
+            margin: 0px 0px 10px 0px;
+            width: 510px;
+        }
+
+        form ::placeholder {
+            font-size: 11px;
+        }
+
+         h6 {
+            font-weight: lighter;
+            color: #181818;
+            margin-bottom: 15px;
+            text-align: start;
+            font-size: 12px;
+        }
+
+        .form-con {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .slideshow figure {
+            position: relative;
+            width: 500%;
+            animation: 20s slider infinite;
+        }
+
+        .slideshow figure img {
+            float: left;
+            width: 20%;
+            border-radius: 15px;
+            height: 160px;
+        }
+
+        .top-up {
+            background: white;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .top {
+            margin: 0;
+            font-size: 14px;
+        }
+
+         .top-up .box-con {
+            display: flex;
+            flex-flow: row;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .top-up .box-con .box {
+            background: #fafafa;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        .top-up .box-con .box:hover {
+            cursor: pointer;
+            filter: brightness(60%);
+        }
+
+        .top-up .box-con .box h6 {
+            background: #13fa7b11;
+            width: 100%;
+            padding: 3px 35px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            color: #4acb91;
+            font-size: 9px;
+        }
+
+        .top-up .box-con .box h6 .fa {
+            color: #4acb91;
+            font-size: 10px;
+        }
+
+        .top-up .box-con .box span {
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+
+        .top-up .box-con .box span .fa {
+            font-size: 13px;
+            color: #181818;
+        }
+
+        .top-up .box-con .box p {
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            color: #adadad;
+        }
+
+        .top-up .box-con .box p .fa {
+            color: #adadad;
+        }
+
+        .amount {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            z-index: 1;
+            transition: all 1s ease-in-out;
+        }
+
+        .amount.show-amount-index {
+            z-index: -1;
+        }
+
+        .amount input {
+            max-width: 350px;
+            padding: 10px;
+            border-bottom: 1px solid #e4e4e4;
+            border-top: none;
+            background: white;
+        }
+
+
+        .amount ::placeholder {
+            font-size: 16px;
+            color: #9c9c9c;
+        }
+
+        .amount .fa {
+            color: #181818;
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+
+        .amount button {
+            width: 100px;
+            padding: 8px;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 15px;
+        }
+
+        .amount button:hover {
+            background: #12a963;
+            cursor: pointer;
+        }
+
+        /* Networks */
+
+        .networks {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px 4px 10px; 
+            width: 500px;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+
+        /* .networks:hover .network-options {
+            visibility: visible;
+            cursor: pointer;
+        } */
+
+        .networks .img {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .networks .img:hover {
+            cursor: pointer;
+        }
+
+
+        .networks .img .fa {
+            font-size: 11px;
+            color: #9c9c9c;
+        }
+
+        .networks input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+        }
+
+        .networks .fa-user {
+            color: white;
+            background: #12a963;
+            padding: 7px;
+            border-radius: 50%;
+        }
+
+        .networks .fa-user:hover {
+            cursor: pointer;
+        }
+
+        .networks .network-options {
+            position: absolute;
+            top: 89%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            color: #00000059;
+        }
+
+        .network-options.show {
+            opacity: 1;
+        }
+
+        .networks .network-options img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .networks .network-options p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .networks .network-options p:hover {
+            cursor: pointer;
+        }
+
+        .networks .network-options p .input {
+            width: 20px;
+            
+        }
+
+        .networks .network-options p label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+
+        @keyframes slider {
+            /* 0% { left: 0;}
+            20% { left: -100%;}
+            25% { left: -100%;}
+            45% { left: -200;}
+            50% { left: -200%;}
+            75% { left: -300%;}
+            80% { left: -300%;}
+            100% { left: 0%;} */
+
+            0% {left: 0%;}
+            25% {left: -100%;}
+            50% {left: -200%;}
+            75% {left: -300%;}
+            100% {left: -400%;}
+        } 
+
+        .networks .img img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+        
+    </style>
+
+    <div class="container">
+
+        <header>
+            <a href="index.html">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; Airtime
+            </a>
+
+            <a href="/" class="history">History</a>
+
+        </header>
+
+        <div class="slideshow">
+            <figure>
+                <a href="/"><img class="slide" src="image1.jpg" alt="slide 1"></a>
+
+                <a href="/"><img class="slide" src="image2.jpg" alt="slide 2"></a>
+
+                <a href="/"><img class="slide" src="image3.jpg" alt="slide 3"></a>
+
+                <a href="/"><img class="slide" src="image4.jpg" alt="slide 4"></a>
+
+                <a href="/"><img class="slide" src="image5.jpg" alt="slide 5"></a>
+            </figure>
+        </div>
+
+        <form method="post">
+                <div class="networks">
+                    <div class="choose-network img">
+                        <img src="./network_img/mtn.jpg" alt="mtn icon">
+                        <i class="fa fa-sort-down"></i>
+                    </div>
+                    <input type="number" name="number" placeholder="0XX XXXX XXXX">
+                    <i class="fa fa-user"></i>
+
+                    <div class="network-options">
+                        <p>
+                            <label for="airtel">
+                                <img src="./network_img/airtel.jpg">
+                                <span>Airtel</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="airtel">
+                        </p>
+
+                        <p>
+                            <label for="mtn">
+                                <img src="./network_img/mtn.jpg">
+                                <span>Mtn</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="mtn">
+                        </p>
+
+                        <p>
+                            <label for="9mobile">
+                                <img src="./network_img/9mobile.jpg">
+                                <span>9mobile</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="9mobile">
+                        </p>
+
+                        <p>
+                            <label for="glo">
+                                <img src="./network_img/glo.jpg">
+                                <span>Glo</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="glo">
+                        </p>
+                    </div>
+                </div>
+
+            <div class="top-up">
+                <h6 class="top">Top up</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+
+                    </div>
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+                </div>
+
+                <!--Second row-->
+
+                <div class="box-con">
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+
+                    </div>
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+
+                    <div class="box">
+                        <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <i class="fa fa-naira-sign"></i>
+                    <span><input type="number" placeholder="50-500,000"></span>
+                    <button class="pay-btn">pay</button>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="airtime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

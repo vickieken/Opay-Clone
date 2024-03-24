@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+            width: 450px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            margin-bottom: 20px;
+            margin-top: 15px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+            margin-bottom: 20px;
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+         label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #696969;
+        }
+
+        form input {
+            border: none;
+            padding: 10px;
+            background: #f2f2f2;
+            border-radius: 5px;
+            margin: 10px 0px 10px 0px;
+            width: 100%;
+        }
+
+        form ::placeholder {
+            font-size: 11px;
+        }
+
+         h6 {
+            font-weight: lighter;
+            color: #181818;
+            margin-bottom: 15px;
+            text-align: start;
+            font-size: 12px;
+        }
+
+        form button {
+            padding: 10px;
+            width: 450px;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 20px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        form button:hover {
+            background: #12a963;
+        }
+    </style>
+
+    <div class="container">
+
+        <header>
+            <a href="profile.html">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; My Profile
+            </a>
+
+        </header>
+
+        <h6>Please fill in your real address, Opay will use it for KYC verification</h6>
+
+        <form method="post">
+            
+            <p>
+                <label for="Nickname">State</label>
+                <input type="text" placeholder="Enter your state" required>
+            </p>
+            
+            <p>
+                <label for="Nickname">LGA</label>
+                <input type="text" placeholder="Enter your LGA" required>
+            </p>
+            
+            <p>
+                <label for="Nickname">Area</label>
+                <input type="text" placeholder="Enter your area" required>
+            </p>
+            
+            <p>
+                <label for="Nickname">Landmark</label>
+                <input type="text" placeholder="Enter your landmark" required>
+            </p>
+            
+            <p>
+                <label for="Nickname">Address</label>
+                <input type="text" placeholder="Enter your address" required>
+            </p>
+
+            <button class="nick-btn">Save</button>
+        </form>
+    </div>
+</body>
+</html>

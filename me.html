@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 0px 0px 0px;
+            background: #ececec;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 550px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background: #12a963;
+            width: 550px;
+            padding: 15px;
+            flex-flow: column;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        header .acc-bal .fa {
+            color: white;
+            font-size: 12px;
+        }
+
+        header .acc-bal .fa:hover {
+            cursor: pointer;
+        }
+
+        header .acc-bal span {
+            color: white;
+            font-size: 12px;
+        }
+
+        header .acc-bal h6 {
+            margin-bottom: 10px;
+        }
+
+        header .acc-bal h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        header .acc-bal h4 .fa, #acc-balance {
+            font-size: 25px;
+        }
+
+        header .transaction-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            width: 60%;
+        }
+
+        header .top-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        header .top-head .head-right-side {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .top-head .head-left-side .fa {
+            font-size: 20px;
+            color: white;
+        }
+
+        header .top-head .head-right-side p {
+            font-size: 14px;
+            color: #ffff;
+        }
+
+        header .top-head .head-right-side img {
+            border-radius: 50%;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .fa {
+            color: #12a963;
+            font-size: 16px;
+        }
+        
+        .transaction-list {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+        }
+
+        .transaction-list a h6, .in-out {
+            padding: 10px;
+        }
+
+        .transaction-list a {
+            color: #4a4a4a;
+            text-decoration: none;
+        }
+
+        .transaction-list a .date-span {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            align-items: center;
+        }
+
+        .transaction-list .date .in-out span {
+            font-weight: lighter;
+        }
+
+        .transaction a {
+            display: flex;
+            justify-content: 
+            space-between;
+            align-items: center;
+            padding: 10px 20px 10px 10px;
+        }
+
+        .transaction {
+            border-radius: 15px;
+            background: white;
+        }
+
+        .transaction-2 {
+            border-radius: 15px;
+            background: white;
+        }
+
+        .transaction-2 a {
+            display: flex;
+            justify-content: 
+            space-between;
+            align-items: center;
+            padding: 10px 20px 10px 10px;
+        }
+
+        .transaction a .transaction-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .transaction-2 a .transaction-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .transaction a .transaction-details .fa {
+            color: #12a963;
+            padding: 10px;
+        }
+
+        .transaction-2 a .transaction-details .fa {
+            color: #12a963;
+            padding: 10px;
+        }
+
+        .transaction a .transaction-details h6 {
+            display: flex;
+            flex-flow: column;
+            font-weight: lighter;
+            font-size: 12px;
+        }
+
+        .transaction-2 a .transaction-details h6 {
+            display: flex;
+            flex-flow: column;
+            font-weight: lighter;
+            font-size: 12px;
+        }
+
+        .transaction a .transaction-details h6 span {
+            margin-top: 5px;
+            color: #9c9c9c;
+        }
+
+        .transaction-2 a .transaction-details h6 span {
+            margin-top: 5px;
+            color: #9c9c9c;
+        }
+
+        .transaction-amount {
+            font-size: 15px;
+            display: flex;
+            flex-flow: column;
+            align-items: right;
+        }
+
+        .transaction-amount h5 {
+            font-weight: 500;
+        }
+
+        .transaction-amount h6 {
+            font-weight: 500;
+            color: #12a963;
+            text-align: right;
+        }
+
+    footer {
+    width: 550px;
+    margin: auto;
+    bottom: 0;
+    padding-top: 170px;
+    }
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background: white;
+    margin: auto;
+    padding: 12px 40px 12px 40px;
+    border-radius: 10px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/* footer ul li a .fa:hover, span:hover {
+    color: var(--green-bg);
+} */
+
+footer li:hover a .fa {
+    color: #12a963;
+}
+
+footer li:hover a span {
+    color: #12a963;
+}
+
+footer ul li a .fa {
+    color: #696969;
+    margin-bottom: 10px;
+}
+
+footer ul li a span {
+    font-size: 13px;
+    color: #696969;
+}
+    </style>
+
+    <div class="container">
+
+        <header>
+           <div class="top-head">
+                <div class="head-right-side">
+                    <div class="prof-img">
+                        <a href="profile/profile.html"><img src="./User.jpg" width="40px" height="40px"></a>
+                    </div>
+                    <p>Hi, <span class="profile_name">VICK</span></p>
+                </div>
+                <div class="head-left-side">
+                    <a href="#">
+                        <i class="fa fa-gear"></i>
+                    </a>
+                </div>
+           </div>
+
+           <div class="acc-bal">
+                <h6>
+                    <span class="avail">Total Balance
+                    </span>
+                    <span>
+                        <i name="button" id="1" class="fa fa-eye"></i>
+                    </span>
+                </h6>
+                <h4><i class="fa fa-naira-sign"></i><span id="acc-balance">0.00</span>
+                </h4>
+        </div>
+
+        </header>
+
+            <div class="transaction-list">
+
+                <div class="transaction">
+                    <a href="transaction.html">
+                        <div class="transaction-details">
+                            <i class="fa fa-calendar-alt"></i>
+                            <h6>
+                                Transaction History
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Account Limits
+                                <span>View your transaction limits</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-credit-card"></i>
+                            <h6>
+                                Bank Card/Account
+                                <span>Add payment option</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Pay Me
+                                <span>Recieve payment for your business</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-id-card"></i>
+                            <h6>
+                                Pay Id
+                                <span>Generate unique code for online transactions</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction-2">
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-shield"></i>
+                            <h6>
+                                Security Center
+                                <span>Protect your funds</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-phone"></i>
+                            <h6>
+                                Opay USSD
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-headphones-alt"></i>
+                            <h6>
+                                Customer service Center
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-handshake"></i>
+                            <h6>
+                                Refer Friends
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-star"></i>
+                            <h6>
+                                Rate Us
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-circle-user"></i><span>Home</span></a></li>
+
+                <li><a href="/"><i class="fa fa-gift"></i><span>Reward</span></a></li>
+
+                <li><a href="/"><i class="fa fa-chart-line"></i><span>Finance</span></a></li>
+
+                <li><a href="/"><i class="fa fa-credit-card"></i><span>Cards</span></a></li>
+
+                <li><a href="me.html"><i class="fa fa-face-grin-wide"></i><span>Me</span></a></li>
+            </ul>
+        </footer>
+
+        
+    </div>
+
+    <script src="header.js"></script>
+    <script src="me.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

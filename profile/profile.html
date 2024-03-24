@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+
+    <!--Main Profile page starts-->
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 11px;
+            background: linear-gradient(#ebebebf4, rgba(239, 239, 239, 0.965)),url(./User.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header a {
+            color: #5a5a5a;
+            text-decoration: none;
+        }
+
+        .profile {
+            padding: 10px;
+            background-color: #ffffff;
+            margin: 12px 12px;
+            border-radius: 10px;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .profile-container .prof-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e8faf3;
+        }
+
+        .profile-container .prof-photo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e8faf3;
+        }
+
+        .other-profile-details {
+            padding: 10px;
+        }
+
+        .other-profile-details .line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .other-profile-details .line .title {
+            color: #797979;
+        }
+
+        .other-profile-details .line .content {
+            color: #575757;
+        }
+
+        .other-profile-details .line .content a {
+            color: #373737;
+            margin-left: 5px;
+        }
+
+        /* Other Container */
+
+        .other-container {
+            padding: 20px;
+            background-color: #ffffff;
+            margin: 12px 12px;
+            border-radius: 10px;
+        }
+
+        .other-container .line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .other-container .line p span {
+            color: #12a963;
+        }
+
+        .other-container .line .title {
+            color: #797979;
+        }
+
+        .other-container .line .content {
+            color: #575757;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+
+
+    <div class="container">
+
+        <!--Header-->
+        <header>
+            <a href="/">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; My Profile
+            </a>
+        </header>
+
+            <!---profile-container-->
+            <div class="profile">
+                <div class="profile-container">
+                    <div class="prof-photo">
+                        <div class="photo">
+                            <img src="./User.jpg" width="40px" height="40px" loading="lazy">
+                        </div>
+                        <p class="name">SIRI</p>
+                    </div>
+                </div>
+        
+                <div class="other-profile-details">
+                    <div class="line">
+                        <p class="title">Full Name</p>
+                        <p class="content">VICKEN TECH COMPANY</p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Mobile Number</p>
+                        <p class="content">+234 804 634 2340</p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Nick Name</p>
+                        <p class="content">
+                            <span>Enter Nickname</span>
+                            <!-- <a href="nickname.html">
+                            </a> -->
+                            <i class="nickname-edit fa fa-edit"></i>
+                        </p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Gender</p>
+                        <p class="content">Male</p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Date of Birth</p>
+                        <p class="content">**-**-23</p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Email</p>
+                        <p class="content">
+                            <span>Enter Email</span>
+                            <!-- <a href="email.html">
+                            </a> -->
+                            <i class="email-edit fa fa-edit"></i>
+                        </p>
+                    </div>
+        
+                    <div class="line">
+                        <p class="title">Address</p>
+                        <p class="content">
+                            <span>Enter Address</span>
+                            <a href="Address.html">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="other-container">
+        <div class="line">
+            <p class="title">Opay Account Number</p>
+            <p class="content"> 8046342340&nbsp;<span><i class="fa-regular fa-copy"></i></span></p>
+        </div>
+
+        <div class="line">
+            <p class="title">BVN</p>
+            <p class="content"> 23456*****</p>
+        </div>
+    </div>
+
+    <!--Main Profile page ends-->
+
+    <!--Nick name Part Starts-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .nickname-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #7a7a7a;
+            position: absolute;
+            width: 100%;
+            top: -100%;
+            transition: all 0.9s;
+            padding: 20px;
+        }
+
+        .nickname-container.show {
+            top: 0%;
+            min-height: 100vh;
+        }
+
+        .nickname-container.hide {
+            top: -100%;
+        }
+        
+        form {
+            background-color: #ffffff;
+            display: flex;
+            flex-flow: column;
+            padding: 30px;
+            width: 450px;
+            border-radius: 15px;
+            /* align-items: center; */
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+            width: 10px;
+        }
+
+        form label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            border: none;
+            padding: 10px;
+            background: #e7e7e7;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        form h6 {
+            font-weight: lighter;
+            color: #696969;
+            margin-bottom: 20px;
+            text-align: start;
+            font-size: 11px;
+        }
+
+        form button {
+            padding: 10px;
+            width: 140px;
+            margin: auto;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #12a963;
+        }
+
+        form .cancel-btn-nickname:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="nickname-container">
+        <form method="post">
+            <i class="cancel-btn-nickname fa fa-times"></i>
+            <label for="Nickname">Nickname</label>
+            <input type="text" placeholder="Enter your nickname">
+            <h6>Enter within 30 characters</h6>
+
+            <button class="nick-btn">Save</button>
+        </form>
+    </div>
+
+    <!--Nick name Part Ends-->
+
+    <!--Email Part Starts-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+        }
+
+        .email-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #7a7a7a;
+            position: absolute;
+            width: 100%;
+            top: -100%;
+            transition: all 0.9s;
+        }
+
+        .email-container.show {
+            top: 0%;
+            min-height: 100vh;
+        }
+
+        .email-container.hide {
+            top: -100%;
+        }
+        
+        form {
+            background-color: #ffffff;
+            display: flex;
+            flex-flow: column;
+            padding: 30px;
+            width: 450px;
+            border-radius: 15px;
+            /* align-items: center; */
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+        form label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #696969;
+        }
+
+        form input {
+            border: none;
+            padding: 10px;
+            background: #e7e7e7;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        form h6 {
+            font-weight: lighter;
+            color: #696969;
+            margin-bottom: 20px;
+            text-align: start;
+        }
+
+        form button {
+            padding: 10px;
+            width: 100%;
+            margin: auto;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #12a963;
+        }
+
+        form .cancel-btn-email:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="email-container">
+        <form method="post">
+            <i class="cancel-btn-email fa fa-times"></i>
+            <label for="email">Change Email</label>
+            <input type="text" placeholder="Enter your email">
+            <h6>For the security of your account, we will verify your identity</h6>
+
+            <button class="nick-btn">Save</button>
+        </form>
+    </div>
+
+    <!--Email Part Starts-->
+
+
+
+    <script src="profile.js"></script>
+</body>
+</html>

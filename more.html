@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airtime page</title>
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 10px 0px 10px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 450px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            margin-bottom: 5px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            width: 550px;
+            padding: 15px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .fa {
+            color: #12a963;
+            font-size: 15px;
+        }
+
+         h6 {
+            font-weight: lighter;
+            color: #181818;
+            text-align: start;
+            font-size: 12px;
+        }
+
+        .recently-used {
+            background: white;
+            padding: 15px 20px;
+            margin-top: 5px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .recently-used .box-con {
+            width: 480px;
+            display: flex;
+            gap: 90px;
+            padding: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .bill-payment {
+            background: white;
+            padding: 15px 20px;
+            margin-top: 5px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .bill-payment .box-con {
+            width: 480px;
+            display: flex;
+            gap: 80px;
+            padding: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .finance {
+            background: white;
+            padding: 15px 20px;
+            margin-top: 5px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .finance .box-con {
+            width: 480px;
+            display: flex;
+            gap: 85px;
+            padding: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .rewards {
+            background: white;
+            padding: 15px 20px;
+            margin-top: 5px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .rewards .box-con {
+            width: 480px;
+            display: flex;
+            gap: 80px;
+            padding: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .others {
+            background: white;
+            padding: 15px 20px;
+            margin-top: 5px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .others .box-con {
+            width: 480px;
+            display: flex;
+            gap: 80px;
+            padding: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .recent {
+            margin: 0;
+            font-size: 12px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .box-con .box a {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .box-con .box a .fa-regular {
+            background: #ececec94;
+            padding: 12px;
+            border-radius: 50%;
+            margin-bottom: 13px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+
+        .box-con .box a .fa {
+            background: #ececec94;
+            padding: 12px;
+            border-radius: 50%;
+            margin-bottom: 13px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .box-con .box h6 {
+            font-family: sans-serif;
+            font-weight: lighter;
+            font-size: 11px;
+            color: #5b5b5b;
+        }
+        
+    </style>
+
+    <div class="container">
+
+        <header>
+            <a href="index.html">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; More
+            </a>
+
+            <a href="/" class="history"><i class="fa fa-search"></i></a>
+
+        </header>
+
+        <form method="post">
+
+            <div class="recently-used">
+                <h6 class="recent">Recently Used</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <a href="electricity.html">
+                            <i class="fa-regular fa-lightbulb"></i>
+                            <h6>Electricity</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-prescription-bottle"></i>
+                            <h6>Waste bill</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Bill Payment-->
+
+            <div class="bill-payment">
+                <h6 class="recent">Bills Payment</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa-regular fa-lightbulb"></i>
+                            <h6>Electricity</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-bus-simple"></i>
+                            <h6>Transport & troll</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-shopping-bag"></i>
+                            <h6>Shopping</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-prescription-bottle"></i>
+                            <h6>Waste bill</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Finance-->
+
+            <div class="finance">
+                <h6 class="recent">Finance</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-vault"></i>
+                            <h6>Safebox</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-bullseye"></i>
+                            <h6>Targets</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-sack-dollar"></i>
+                            <h6>Spend & Save</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-prescription-bottle"></i>
+                            <h6>Waste bill</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Rewards-->
+
+            <div class="rewards">
+                <h6 class="recent">Rewards</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <h6>Daily Check-In</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-bullhorn"></i>
+                            <h6>Refer & Earn</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-hand-holding-heart"></i>
+                            <h6>Play4aChild</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Others-->
+
+            <div class="others">
+                <h6 class="recent">Others</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <h6>Physical Card</h6>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="/">
+                            <i class="fa fa-hand-holding-usd"></i>
+                            <h6>Save in Dollar</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="airtime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

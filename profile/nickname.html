@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #00000022;
+        }
+        
+        form {
+            background-color: #ffffff;
+            display: flex;
+            flex-flow: column;
+            padding: 30px;
+            width: 450px;
+            border-radius: 15px;
+            /* align-items: center; */
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+        form label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            border: none;
+            padding: 10px;
+            background: #e7e7e7;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        form h6 {
+            font-weight: lighter;
+            color: #696969;
+            margin-bottom: 20px;
+            text-align: start;
+        }
+
+        form button {
+            padding: 10px;
+            width: 140px;
+            margin: auto;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+        form .cancel-btn {
+            background: none;
+            width: 10px;
+            margin: 0;
+        }
+
+        form .cancel-btn:hover {
+            background-color: transparent;
+        }
+
+        form button:hover {
+            background: #12a963;
+        }
+    </style>
+
+    <div class="container">
+        <form method="post">
+            <button class="cancel-btn"><i class="fa fa-times"></i></button>
+            <label for="Nickname">Nickname</label>
+            <input type="text" placeholder="Enter your nickname">
+            <h6>Enter within 30 characters</h6>
+
+            <button class="nick-btn">Save</button>
+        </form>
+    </div>
+</body>
+</html>

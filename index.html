@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <!--Head area of the page-->
+        <header>
+            <div class="head-right-side">
+                <div class="prof-img">
+                    <a href="profile/profile.html"><img src="./User.jpg" width="40px" height="40px"></a>
+                </div>
+                <p>Hi, <span class="profile_name">VICK</span></p>
+            </div>
+            <div class="head-left-side">
+                <ul>
+                    <li><a href="/"><i class="fa fa-headphones-alt"></i></a></li>
+                    <li><i style="color: #818181; cursor: pointer;" class="fa fa-qrcode"></i></li>
+                    <li><a href="/"><i class="fa-regular fa-bell"></i></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!--The account balance & transaction history  part-->
+
+        <div class="acc-bal-container">
+            <div class="acc-bal">
+                <h6>
+                    <span>
+                        <i class="fa fa-shield"></i>
+                    </span> 
+                    <span class="avail">Available Balance
+                    </span>
+                    <span>
+                        <i name="button" id="1" class="fa fa-eye"></i>
+                    </span>
+                </h6>
+                <h4><i class="fa fa-naira-sign"></i><span id="acc-balance">0.00</span>
+                </h4>
+            </div>
+
+            <div class="transaction-history">
+                <a href="transaction.html"><h6>Transaction History &nbsp;<i class="fa fa-angle-right"></i></h6></a>
+
+                <a href="/"><button class="add-mon-btn"><i class="fa fa-plus"></i> Add Money</button></a>
+            </div>
+        </div>
+
+        <!--The send money and withdraw money options-->
+
+        <div class="send-money-container">
+
+            <div class="box">
+                <a href="To_Opay.html"><i class="fa fa-message"></i></a>
+                <h6>To Opay</h6>
+            </div>
+
+            <div class="box">
+                <a href="To_Bank.html"><i class="fa fa-bank"></i></a>
+                <h6>To Bank</h6>
+            </div>
+
+            <div class="box">
+                <a href="/"><i class="fa fa-money-bill-transfer"></i></a>
+                <h6>Withdraw</h6>
+            </div>
+        </div>
+
+        <!--Other services part-->
+
+        <div class="other-services-container">
+
+            <div class="box-container">
+                <div class="box">
+                    <p class="discount">Up to 6%</p>
+                    <a href="airtime.html"><i class="fa fa-mobile-alt"></i></a>
+                    <h6>Airtime</h6>
+                </div>
+    
+                <div class="box">
+                    <p class="discount">Up to 6%</p>
+                    <a href="data.html"><i class="fa fa-globe"></i></a>
+                    <h6>Data</h6>
+                </div>
+    
+                <div class="box">
+                    <a href="betting.html"><i class="fa fa-futbol"></i></a>
+                    <h6>Betting</h6>
+                </div>
+    
+                <div class="box">
+                    <a href="cable.html"><i class="fa fa-tv"></i></a>
+                    <h6>TV</h6>
+                </div>
+    
+            </div>
+            
+            <div class="box-container b-c-2">
+                <div class="box">
+                    <a href="/"><i class="fa fa-piggy-bank"></i></a>
+                    <h6>OWealth</h6>
+                </div>
+    
+                <div class="box">
+                    <a href="/"><i class="fa fa-check-double"></i></a>
+                    <h6>Loan</h6>
+                </div>
+    
+                <div class="box">
+                    <a href="/"><i class="fa fa-hand-holding-heart"></i></a>
+                    <h6>Play4aChild</h6>
+                </div>
+    
+                <div class="box">
+                    <a href="more.html"><i class="fa fa-mail-bulk"></i></a>
+                    <h6>More</h6>
+                </div>
+            </div>
+
+        </div>
+
+        <!--referral container-->
+
+        <div class="referal-container">
+            <a href="/">
+                <div class="icon">
+                    <i class="fa fa-volume-high"></i>
+                    <i class="fa fa-naira-sign"></i>
+                </div>
+
+                <div class="claim-cash">
+                    <h6 class="cash-up">Cash up for grabs!</h6>
+                    <h6>Inivite friends to earn <i class="fa fa-naira-sign"></i>3,000 cash</h6>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="/"><i class="fa fa-circle-user"></i><span>Home</span></a></li>
+
+                <li><a href="/"><i class="fa fa-gift"></i><span>Reward</span></a></li>
+
+                <li><a href="/"><i class="fa fa-chart-line"></i><span>Finance</span></a></li>
+
+                <li><a href="/"><i class="fa fa-credit-card"></i><span>Cards</span></a></li>
+
+                <li><a href="me.html"><i class="fa fa-face-grin-wide"></i><span>Me</span></a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <script src="index.js"></script>
+    <script src="header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

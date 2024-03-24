@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 10px 0px 10px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 450px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            margin-bottom: 10px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            width: 550px;
+            padding: 15px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .history {
+            color: #12a963;
+        }
+
+        form .fa {
+            text-align: right;
+            color: #696969;
+        }
+
+         label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 0px;
+            font-size: 13px;
+            color: #000000;
+        }
+
+        form input {
+            border: 1px solid #e4e4e42b;
+            padding: 13px;
+            background: #fcfcfc;
+            border-radius: 10px;
+            margin: 0px 0px 10px 0px;
+            width: 510px;
+        }
+
+        form ::placeholder {
+            font-size: 11px;
+        }
+
+         h6 {
+            font-weight: lighter;
+            color: #181818;
+            margin-bottom: 15px;
+            text-align: start;
+            font-size: 12px;
+        }
+
+        .form-con {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .slideshow figure {
+            position: relative;
+            width: 500%;
+            animation: 20s slider infinite;
+        }
+
+        .slideshow figure img {
+            float: left;
+            width: 20%;
+            border-radius: 15px;
+            height: 160px;
+        }
+
+        .top-up {
+            background: white;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .top {
+            margin: 0;
+            font-size: 11px;
+        }
+
+         .top-up .box-con {
+            display: flex;
+            flex-flow: row;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .top-up .box-con .box {
+            background: #fafafa;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px 35px;
+        }
+
+        /* .top-up .box-con .box:hover {
+            cursor: pointer;
+            filter: brightness(60%);
+        } */
+
+        .top-up .box-con .box h6 .fa {
+            color: #4acb91;
+            font-size: 10px;
+        }
+
+        .top-up .box-con .box span {
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+
+        .top-up .box-con .box span .fa {
+            font-size: 13px;
+            color: #181818;
+        }
+
+        .top-up .box-con .box p {
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            color: #adadad;
+        }
+
+        .top-up .box-con .box p .fa {
+            color: #adadad;
+        }
+
+        .amount {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            z-index: 1;
+            transition: all 1s ease-in-out;
+        }
+
+        .amount.show-betting-index {
+            z-index: -1;
+        }
+
+        .amount input {
+            max-width: 350px;
+            padding: 10px;
+            border-bottom: 1px solid #e4e4e4;
+            border-top: none;
+            background: white;
+        }
+
+
+        .amount ::placeholder {
+            font-size: 16px;
+            color: #9c9c9c;
+
+        }
+
+        .amount .fa {
+            color: #181818;
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+
+        .amount button {
+            width: 100px;
+            padding: 8px;
+            border: none;
+            color: white;
+            background: #b4decb;
+            border-radius: 15px;
+        }
+
+        .amount button:hover {
+            background: #12a963;
+            cursor: pointer;
+        }
+
+        /* Networks */
+
+        .networks {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px 4px 10px; 
+            width: 500px;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+
+        /* .networks:hover .network-options {
+            visibility: visible;
+            cursor: pointer;
+        } */
+
+        .networks .img {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .networks .img:hover {
+            cursor: pointer;
+        }
+
+
+        .networks .img .fa {
+            font-size: 11px;
+            color: #9c9c9c;
+        }
+
+        .networks input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+        }
+
+        .networks .fa-user {
+            color: white;
+            background: #12a963;
+            padding: 7px;
+            border-radius: 50%;
+        }
+
+        .networks .fa-user:hover {
+            cursor: pointer;
+        }
+
+        .networks .network-options {
+            position: absolute;
+            top: 90%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            color: #00000059;
+            height: 390px;
+            overflow-y: auto;
+        }
+
+        .network-options.show {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .networks .network-options img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .networks .network-options p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .networks .network-options p:hover {
+            cursor: pointer;
+        }
+
+        .networks .network-options p .input {
+            width: 20px;
+        }
+
+        .networks .network-options p label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+
+        @keyframes slider {
+            /* 0% { left: 0;}
+            20% { left: -100%;}
+            25% { left: -100%;}
+            45% { left: -200;}
+            50% { left: -200%;}
+            75% { left: -300%;}
+            80% { left: -300%;}
+            100% { left: 0%;} */
+
+            0% {left: 0%;}
+            25% {left: -100%;}
+            50% {left: -200%;}
+            75% {left: -300%;}
+            100% {left: -400%;}
+        } 
+
+        .networks .img img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+        
+    </style>
+
+    <div class="container">
+
+        <header>
+            <a href="index.html">
+                <span><i class="fa fa-angle-left"></i></span>
+                &nbsp; Betting
+            </a>
+
+            <a href="/" class="history">History</a>
+
+        </header>
+
+        <div class="slideshow">
+            <figure>
+                <a href="/"><img class="slide" src="image1.jpg" alt="slide 1"></a>
+
+                <a href="/"><img class="slide" src="image2.jpg" alt="slide 2"></a>
+
+                <a href="/"><img class="slide" src="image3.jpg" alt="slide 3"></a>
+
+                <a href="/"><img class="slide" src="image4.jpg" alt="slide 4"></a>
+
+                <a href="/"><img class="slide" src="image5.jpg" alt="slide 5"></a>
+            </figure>
+        </div>
+
+        <form method="post">
+                <div class="networks">
+                    <div class="choose-network img">
+                        <img src="./betting_img/betting-img-3.jpg" alt="mtn icon">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+
+                    <!--Network Options-->
+
+                    <div class="network-options">
+                        <p>
+                            <label for="live score">
+                                <img src="./betting_img/betting-img-1.jpg">
+                                <span>Live Score</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="live score">
+                        </p>
+
+                        <p>
+                            <label for="1XBet">
+                                <img src="./betting_img/betting-img-2.jpg">
+                                <span>1XBet</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="1XBet">
+                        </p>
+
+                        <p>
+                            <label for="Bet365">
+                                <img src="./betting_img/betting-img-4.jpg">
+                                <span>Bet365</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Bet365">
+                        </p>
+
+                        <p>
+                            <label for="125Bet">
+                                <img src="./betting_img/betting-img-5.jpg">
+                                <span>125Bet</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="125Bet">
+                        </p>
+
+                        <p>
+                            <label for="MSport">
+                                <img src="./betting_img/betting-img-6.png">
+                                <span>MSport</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="MSport">
+                        </p>
+
+                        <p>
+                            <label for="Sporty Bet">
+                                <img src="./betting_img/betting-img-7.jpeg">
+                                <span>Sporty Bet</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Sporty Bet">
+                        </p>
+
+                        <p>
+                            <label for="Bet King">
+                                <img src="./betting_img/betting-img-8.png">
+                                <span>Bet King</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Bet King">
+                        </p>
+
+                        <p>
+                            <label for="Bang Bet">
+                                <img src="./betting_img/betting-img-9.jpeg">
+                                <span>Bang Bet</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Bang Bet">
+                        </p>
+
+                        <p>
+                            <label for="Live Score Bet">
+                                <img src="./betting_img/betting-img-10.png">
+                                <span>Live Score Bet</span>
+                            </label>
+                            <input class="input" type="radio" name="network" id="Live Score Bet">
+                        </p>
+                    </div>
+                </div>
+
+            <div class="top-up">
+                <h6 class="top">Select Amount</h6>
+                <div class="box-con">
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+
+                    </div>
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+                </div>
+
+                <!--Second row-->
+
+                <div class="box-con">
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+
+                    </div>
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+
+                    <div class="box">
+                        <span><i class="fa fa-naira-sign"></i> 50</span>
+                        <p>pay <i class="fa fa-naira-sign"></i>50</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <i class="fa fa-naira-sign"></i>
+                    <span><input type="number" placeholder="50-500,000"></span>
+                    <button class="pay-btn">pay</button>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="betting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>

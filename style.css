@@ -1,0 +1,358 @@
+/* VARIABLES  */
+
+:root {
+    /* screen sizes */
+    --Mobile-size: 375px;
+    --Desktop-size: 1440px;
+
+    /* Colors */
+
+    --green-bg: #12a963;
+    --light-green-bg: #e8faf3;
+    --light-ash-bg: #f4f4f4;
+    --white-bg: #ffffff;
+    --black-color: #818181;
+    --dark-grey-color: black;
+
+
+    
+    /* Typography */
+    /* Font */
+    --Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan);
+    --Weights: 700;
+    --Font-size-numbers: 32px;
+}
+
+/* general styling */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--light-ash-bg);
+    position: relative;
+    min-height: 100vh;
+}
+
+.container {
+    margin: auto;
+    padding: 4px;
+    min-height: 100vh;
+}
+
+/* Header part starts */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--white-bg);
+    width: 510px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.head-right-side {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+
+.head-right-side p {
+    font-size: 14px;
+}
+
+.head-right-side .prof-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--light-green-bg);
+    margin-right: 10px;
+    border: none;
+}
+
+.head-right-side .prof-img img {
+    border-radius: 50%;
+}
+
+.head-left-side {
+    display: flex;
+}
+
+.head-left-side ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    gap: 25px;
+}
+
+.head-left-side ul li {
+    font-size: 20px;
+}
+
+.head-left-side ul li a {
+    color: var(--black-color);
+}
+
+
+/* Header part ends */
+
+/*The account balance & transaction history  part starts */
+
+.acc-bal-container {
+    display: flex;
+    justify-content: space-between;
+    background: var(--green-bg);
+    width: 510px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.acc-bal-container .acc-bal h6 {
+    color: var(--white-bg);
+}
+
+.acc-bal-container .acc-bal h6 span,  .fa-eye  {
+    color: white;
+    font-size: 14px;
+}
+
+.acc-bal-container .acc-bal h6 span,  .fa-eye:hover {
+    cursor: pointer;
+}
+
+.acc-bal-container .acc-bal h6 .avail {
+    font-size: 11px;
+    color: var(--light-ash-bg);
+    font-family: sans-serif;
+    font-weight: 0px;
+    margin: 5px 5px;
+    font-weight: lighter;
+}
+
+.acc-bal-container .acc-bal h4 {
+    color: var(--white-bg);
+    font-family: sans-serif;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: lighter;
+}
+
+.transaction-history a {
+    color: var(--light-ash-bg);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.transaction-history a .add-mon-btn {
+    border: none;
+    background: var(--white-bg);
+    padding: 8px 15px 8px 15px;
+    font-size: 10px;
+    border-radius: 15px;
+    color: var(--green-bg);
+    margin: 10px;
+}
+
+/*The account balance & transaction history  part ends */
+
+/* The send money and withdraw money options starts */
+
+.send-money-container {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    background: var(--white-bg);
+    width: 510px;
+    margin: auto;
+    padding: 20px 60px 20px 60px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.send-money-container .box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.send-money-container .box a .fa {
+    color: var(--green-bg);
+    background-color: var(--light-green-bg);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.send-money-container .box h6 {
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+/* The send money and withdraw money options ends */
+
+/* Other services part starts */
+
+.other-services-container {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    background: var(--white-bg);
+    width: 510px;
+    margin: auto;
+    padding: 20px 60px 20px 60px;
+    border-radius: 15px;
+    margin-top: 10px;
+    flex-flow: column;
+}
+
+.other-services-container .box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-container .box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+}
+
+.box-container .box p  {
+    background: linear-gradient(to right, #ff6a00cb, #ff2f00cb);
+    font-size: 8px;
+    font-family: sans-serif;
+    color: white;
+    padding: 2px 4px 2px 4px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: absolute;
+    right: -70%;
+    top: 0;
+}
+
+.box-container .box a .fa {
+    color: var(--green-bg);
+    background-color: var(--light-green-bg);
+    padding: 13px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.box-container .box h6 {
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.b-c-2 {
+    margin-top: 10px;
+}
+
+/* Other services part  ends */
+
+/* referral container starts */
+
+.referal-container a{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row;
+    background: var(--white-bg);
+    width: 510px;
+    margin: auto;
+    padding: 20px 60px 20px 30px;
+    border-radius: 15px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.referal-container a .icon {
+    color: var(--green-bg);
+    padding: 10px;
+    background: var(--light-green-bg);
+    border-radius: 50%;
+    position: relative;
+    outline: 1px solid var(--green-bg);
+    margin-right: 15px;
+}
+
+.referal-container a .icon .fa-naira-sign {
+    position: absolute;
+    font-size: 8px;
+    bottom: 10px;
+    left: 10px;
+    color: var(--light-green-bg);
+    background-color: var(--green-bg);
+    border-radius: 50%;
+    outline: 1px solid var(--light-green-bg);
+}
+
+.referal-container a .claim-cash h6 {
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: var(--black-color);
+}
+
+.referal-container a .claim-cash  .cash-up {
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+/* referral container ends */
+
+/* Footer */
+
+footer {
+    width: 550px;
+    margin: auto;
+    bottom: 0;
+    padding-top: 170px;
+    
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background: var(--white-bg);
+    margin: auto;
+    padding: 12px 40px 12px 40px;
+    border-radius: 10px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/* footer ul li a .fa:hover, span:hover {
+    color: var(--green-bg);
+} */
+
+footer li:hover a .fa {
+    color: var(--green-bg);
+}
+
+footer li:hover a span {
+    color: var(--green-bg);
+}
+
+footer ul li a .fa {
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+footer ul li a span {
+    font-size: 13px;
+    color: var(--black-color);
+}

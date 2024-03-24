@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Name</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="css/css/all.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 0px 0px 0px 0px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 550px;
+            margin: auto;
+            padding: 1px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            width: 550px;
+            padding: 15px;
+            flex-flow: column;
+        }
+
+        header .transaction-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            width: 60%;
+        }
+
+        header .top-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        header .transaction-type h6  {
+            color: #9c9c9c;
+            font-size: 10px;
+        }
+
+        header .transaction-type .fa {
+            color: #9c9c9c;
+            font-size: 12px;
+        }
+
+        header a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #696969;
+        }
+
+        header  .fa {
+            color: #12a963;
+            font-size: 16px;
+        }
+        
+        .transaction-list {
+            margin-top: 10px;
+            width: 100%;
+            background: white;
+        }
+
+        .transaction-list a h6, .in-out {
+            padding: 10px;
+        }
+
+        .transaction-list .date a {
+            color: #4a4a4a;
+            text-decoration: none;
+        }
+
+        .transaction-list .date a .date-span {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            align-items: center;
+        }
+
+
+        .transaction-list .date .in-out h6 {
+            margin-bottom: 5px;
+            color: #4a4a4a;
+            display: flex;
+            gap: 20px;
+        }
+
+        .transaction-list .date .in-out span {
+            font-weight: lighter;
+        }
+
+        .transaction {
+           overflow-y: auto;
+            height: 640px;
+        }
+
+        .transaction a {
+            display: flex;
+            justify-content: 
+            space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 10px;
+        }
+
+        .transaction a .transaction-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .transaction a .transaction-details .fa {
+            color: #12a963;
+            background-color: #51e7a137;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .transaction a .transaction-details h6 {
+            display: flex;
+            flex-flow: column;
+            font-weight: lighter;
+            font-size: 12px;
+        }
+
+        .transaction a .transaction-details h6 span {
+            margin-top: 5px;
+            color: #9c9c9c;
+        }
+
+        .transaction-amount {
+            font-size: 15px;
+            display: flex;
+            flex-flow: column;
+            align-items: right;
+        }
+
+        .transaction-amount h5 {
+            font-weight: 500;
+        }
+
+        .transaction-amount h6 {
+            font-weight: 500;
+            color: #12a963;
+            text-align: right;
+        }
+    </style>
+
+    <div class="container">
+
+        <header>
+            <div class="top-head">
+                <a href="index.html">
+                    <span><i class="fa fa-angle-left"></i></span>
+                    &nbsp; Transactions
+                </a>
+    
+                <a href="#" class="history"><i class="fa fa-cloud-arrow-down"></i></a>
+            </div>
+
+            <div class="transaction-type">
+                <a href="#">
+                    <h6><span>All Categories</span> <i class="fa fa-angle-down"></i></h6>
+                </a>
+
+                <a href="#">
+                    <h6><span>All</span> <i class="fa fa-angle-down"></i></h6>
+                </a>
+            </div>
+
+        </header>
+
+        <div class="transaction-list">
+            <div class="date">
+                <a href="#">
+                    <h6 class="date-span"><span>Mar</span> <i class="fa fa-angle-down"></i></h6>
+                </a>
+
+                <div class="in-out">
+                    <h6>
+                        <span>
+                            In:
+                            <i class="fa fa-naira-sign"></i>109,200.00
+                        </span>
+
+                        <span>
+                            Out:
+                            <i class="fa fa-naira-sign"></i>95,200.00
+                        </span>
+                    </h6>
+                </div>
+
+                <div class="transaction">
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="transaction-details">
+                            <i class="fa fa-bank"></i>
+                            <h6>
+                                Transfer to Vicken Company / VICTOR
+                                <span>Mar 23rd, 20:40:25</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <h5> - <i class="fa fa-naira-sign"></i>600,000.00</h5>
+                            <h6>
+                                Succesful
+                            </h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="header.js"></script>
+    <script src="electricity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</body>
+</html>
