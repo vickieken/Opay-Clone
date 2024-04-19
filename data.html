@@ -25,7 +25,7 @@
             flex-flow: column;
             align-items: center;
             min-height: 100vh;
-            width: 450px;
+            width: 100%;
             margin: auto;
             padding: 1px;
         }
@@ -36,7 +36,7 @@
             display: flex;
             justify-content: space-between;
             background: white;
-            width: 550px;
+            width: 100%;
             padding: 15px;
         }
 
@@ -53,6 +53,10 @@
         form .fa {
             text-align: right;
             color: #696969;
+        }
+
+        form {
+            width: 100%;
         }
 
          label {
@@ -95,6 +99,7 @@
         .slideshow {
             overflow: hidden;
             margin-bottom: 20px;
+            width: 80%;
         }
 
         .slideshow figure {
@@ -113,16 +118,16 @@
         .top-up {
             background: white;
             padding: 20px;
-            margin-top: 15px;
+            margin-top: 10px;
             border-radius: 15px;
             display: flex;
             flex-flow: column;
-            height: 350px;
+            width: 100%;
         }
 
         .top-up .data-plans {
             display: flex;
-            gap: 30px;
+            gap: 15px;
             align-items: center;
             justify-content: center;
             transition: all 1s ease-in-out;
@@ -137,6 +142,7 @@
             transition: all .5s;
             position: relative;
             transition: all 1s ease-in-out;
+            font-size: 11px;
         }
 
         .data-plans .plans::before {
@@ -144,7 +150,7 @@
             bottom: -7px;
             content: '';
             width: 0%;
-            height: 3px;
+            height: 1px;
             background: #12a963;
             border-radius: 15px;
             transition: all 1s ease-in-out;
@@ -169,17 +175,19 @@
          .top-up .box-con {
             display: flex;
             flex-flow: row wrap;
-            gap: 20px;
+            gap: 5px;
             justify-content: center;
-            margin-top: 8px;
+            /* margin-top: 8px; */
+            width: 100%;
         }
 
         .top-up .box-con .box {
             background: #fafafa;
             border-radius: 10px;
             display: flex;
-            flex-flow: column ;
+            flex-flow: column wrap;
             align-items: center;
+            width: 100px;
         }
 
         .top-up .box-con .box:hover {
@@ -195,7 +203,8 @@
         .top-up .box-con .box h6 {
             background: #13fa7b11;
             width: 100%;
-            padding: 3px 35px;
+            padding: 3px 3px;
+            text-align: center;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             color: #4acb91;
@@ -204,16 +213,16 @@
 
         .top-up .box-con .box h6 .fa {
             color: #4acb91;
-            font-size: 10px;
+            font-size: 7px;
         }
 
         .top-up .box-con .box span {
-            font-size: 15px;
+            font-size: 13px;
             padding-bottom: 5px;
         }
 
         .top-up .box-con .box span .fa {
-            font-size: 13px;
+            font-size: 11px;
             color: #181818;
         }
 
@@ -232,9 +241,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-flow: row wrap;
             margin-top: 20px;
             z-index: 1;
             transition: all 1s ease-in-out;
+            width: 100%;
+        }
+
+        .amount span {
+            display: flex;
+            align-items: center;
+            width: 70%;
         }
 
         .amount.show-data-index {
@@ -286,7 +303,7 @@
             justify-content: center;
             background: #fff;
             box-shadow: 0 2px 2px rgba(0,0,0,0.222);
-            width: 500px;
+            width: 100%;
             padding: 0px 10px 0px 10px;
             border-radius: 20px;
             gap: 10px;
@@ -466,7 +483,6 @@
                     <h6 class="plans">Weekly</h6>
                     <h6 class="plans">Monthly</h6>
                     <h6 class="plans">2-Months</h6>
-                    <h6 class="plans">3-Months</h6>
                     <h6 class="plans">Yearly</h6>
                 </div>
 

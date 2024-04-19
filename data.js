@@ -37,6 +37,8 @@ wrapper.addEventListener("click", ()=> {
 item.forEach(item => {
     item.addEventListener("click", ()=> {
         list.classList.toggle('show');
+
+        dataPlans.classList.toggle('hide');
     })
 })
 

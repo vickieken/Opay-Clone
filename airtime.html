@@ -24,7 +24,7 @@
             flex-flow: column;
             align-items: center;
             min-height: 100vh;
-            width: 450px;
+            width: 100%;
             margin: auto;
             padding: 1px;
         }
@@ -35,7 +35,7 @@
             display: flex;
             justify-content: space-between;
             background: white;
-            width: 550px;
+            width: 100%;
             padding: 15px;
         }
 
@@ -52,6 +52,10 @@
         form .fa {
             text-align: right;
             color: #696969;
+        }
+
+        form {
+            width: 100%;
         }
 
          label {
@@ -94,6 +98,7 @@
         .slideshow {
             overflow: hidden;
             margin-bottom: 20px;
+            width: 80%;
         }
 
         .slideshow figure {
@@ -112,31 +117,36 @@
         .top-up {
             background: white;
             padding: 20px;
-            margin-top: 15px;
+            margin-top: 10px;
             border-radius: 15px;
             display: flex;
             flex-flow: column;
+            width: 100%;
         }
 
         .top {
-            margin: 0;
+            text-align: center;
+            margin-left: 10px;
+            width: 30%;
             font-size: 14px;
         }
 
          .top-up .box-con {
             display: flex;
-            flex-flow: row;
-            gap: 20px;
+            flex-flow: row wrap;
+            gap: 5px;
             justify-content: center;
-            margin-top: 15px;
+            /* margin-top: 0px; */
+            width: 100%;
         }
 
         .top-up .box-con .box {
             background: #fafafa;
             border-radius: 10px;
             display: flex;
-            flex-flow: column;
+            flex-flow: column wrap;
             align-items: center;
+            width: 100px;
         }
 
         .top-up .box-con .box:hover {
@@ -147,7 +157,8 @@
         .top-up .box-con .box h6 {
             background: #13fa7b11;
             width: 100%;
-            padding: 3px 35px;
+            padding: 3px 3px;
+            text-align: center;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             color: #4acb91;
@@ -156,16 +167,16 @@
 
         .top-up .box-con .box h6 .fa {
             color: #4acb91;
-            font-size: 10px;
+            font-size: 7px;
         }
 
         .top-up .box-con .box span {
-            font-size: 15px;
+            font-size: 13px;
             padding-bottom: 5px;
         }
 
         .top-up .box-con .box span .fa {
-            font-size: 13px;
+            font-size: 11px;
             color: #181818;
         }
 
@@ -184,9 +195,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-flow: row wrap;
             margin-top: 20px;
             z-index: 1;
             transition: all 1s ease-in-out;
+            width: 100%;
+        }
+
+        .amount span {
+            display: flex;
+            align-items: center;
+            width: 70%;
         }
 
         .amount.show-amount-index {
@@ -194,7 +213,7 @@
         }
 
         .amount input {
-            max-width: 350px;
+            width: 100%;
             padding: 10px;
             border-bottom: 1px solid #e4e4e4;
             border-top: none;
@@ -237,7 +256,7 @@
             justify-content: center;
             background: #fff;
             box-shadow: 0 2px 2px rgba(0,0,0,0.222);
-            width: 500px;
+            width: 100%;
             padding: 0px 10px 0px 10px;
             border-radius: 20px;
             gap: 10px;
@@ -292,7 +311,7 @@
         }
 
         .list.show {
-            max-height: 500px
+            max-height: 500px;
         }
 
         .list .item {
@@ -429,11 +448,7 @@
                         <span><i class="fa fa-naira-sign"></i> 50</span>
                         <p>pay <i class="fa fa-naira-sign"></i>50</p>
                     </div>
-                </div>
 
-                <!--Second row-->
-
-                <div class="box-con">
                     <div class="box">
                         <h6><i class="fa fa-naira-sign"></i> 1.5 Cashback</h6>
                         <span><i class="fa fa-naira-sign"></i> 50</span>
@@ -454,11 +469,16 @@
                 </div>
 
                 <div class="amount">
-                    <i class="fa fa-naira-sign"></i>
-                    <span><input type="number" placeholder="50-500,000"></span>
+                    <span><i class="fa fa-naira-sign"></i><input type="number" placeholder="50-500,000"></span>
                     <button class="pay-btn">pay</button>
                 </div>
             </div>
+
+                <!--Second row-->
+
+                <div class="box-con">
+                    
+                </div> 
 
             
         </form>
