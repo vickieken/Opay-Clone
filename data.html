@@ -125,6 +125,11 @@
             gap: 30px;
             align-items: center;
             justify-content: center;
+            transition: all 1s ease-in-out;
+        }
+
+        .data-plans.hide {
+            opacity: 0;
         }
 
         .data-plans .plans {
@@ -175,6 +180,11 @@
             display: flex;
             flex-flow: column ;
             align-items: center;
+        }
+
+        .top-up .box-con .box:hover {
+            cursor: pointer;
+            filter: brightness(95%);
         }
 
         /* .top-up .box-con .box:hover {
@@ -266,107 +276,92 @@
             cursor: pointer;
         }
 
-        /* Networks */
+        /* drop-down */
 
-        .networks {
+        .drop-down {
+            position: relative;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4px 10px 4px 10px; 
+            background: #fff;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.222);
             width: 500px;
-            gap: 10px;
-            background-color: white;
+            padding: 0px 10px 0px 10px;
             border-radius: 20px;
-            position: relative;
-            transition: all 1s ease-in-out;
-        }
-
-        /* .networks:hover .network-options {
-            visibility: visible;
-            cursor: pointer;
-        } */
-
-        .networks .img {
-            display: flex;
-            align-items: center;
             gap: 10px;
         }
 
-        .networks .img:hover {
-            cursor: pointer;
-        }
-
-
-        .networks .img .fa {
-            font-size: 11px;
-            color: #9c9c9c;
-        }
-
-        .networks input {
-            border-top: none;
-            border-bottom: 1px solid #9c9c9c15;
-            background: transparent;
-            width: 80%;
-        }
-
-        .networks .fa-user {
+        .drop-down .fa-user {
             color: white;
             background: #12a963;
             padding: 7px;
             border-radius: 50%;
         }
 
-        .networks .fa-user:hover {
+        .drop-down .fa-user:hover {
             cursor: pointer;
         }
 
-        .networks .network-options {
-            position: absolute;
-            top: 89%;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 15px;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-            color: #00000059;
+        .drop-down input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+            margin-top: 10px;
         }
 
-        .network-options.show {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .networks .network-options img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-
-        .networks .network-options p {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f7f7f7;
-            margin: 5px;
-            border-radius: 10px;
-        }
-
-        .networks .network-options p:hover {
-            cursor: pointer;
-        }
-
-        .networks .network-options p .input {
-            width: 20px;
-            
-        }
-
-        .networks .network-options p label {
+        .wrapper {
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .drop-down:hover {
+            cursor: pointer;
+        }
+
+        .wrapper img {
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .list {
+            position: absolute;
+            top: 75px;
+            left: 0;
+            width: 100%;
+            max-height: 0px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.322);
+            padding: 0px;
+            overflow-y: scroll;
+            border-radius: 10px;
+            transition: all 1s ease-in-out;
+        }
+
+        .list.show {
+            max-height: 500px
+        }
+
+        .list .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 10px;
+            margin-top: 0px;
+            border-bottom: 1px solid #9c9c9c61;
+        }
+
+        .list .item:hover {
+            background-color: #12a96334;
+            cursor: pointer;
+        }
+
+        .list .item  img {
+            height: auto;
+            width: 35px;
+            border-radius: 50%;
         }
 
 
@@ -423,48 +418,44 @@
         </div>
 
         <form method="post">
-                <div class="networks">
-                    <div class="choose-network img">
-                        <img src="./network_img/mtn.jpg" alt="mtn icon">
-                        <i class="fa fa-sort-down"></i>
+            <div class="drop-down">
+                <div class="wrapper">
+
+                    <img src="./network_img/mtn.jpg" class="selectedImg">
+                    <i class="fa fa-sort-down"></i>
+                    
+                </div>
+                
+                <input type="number" name="number" placeholder="0XX XXXX XXXX">
+                <i class="fa fa-user"></i>
+        
+                <div class="list">
+                    
+                    <div class="item">
+                        <img src="/network_img/9mobile.jpg">
+                        <div class="text">9mobile</div>
+        
                     </div>
-                    <input type="number" name="number" placeholder="0XX XXXX XXXX">
-                    <i class="fa fa-user"></i>
-
-                    <div class="network-options">
-                        <p>
-                            <label for="airtel">
-                                <img src="./network_img/airtel.jpg">
-                                <span>Airtel</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="airtel">
-                        </p>
-
-                        <p>
-                            <label for="mtn">
-                                <img src="./network_img/mtn.jpg">
-                                <span>Mtn</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="mtn">
-                        </p>
-
-                        <p>
-                            <label for="9mobile">
-                                <img src="./network_img/9mobile.jpg">
-                                <span>9mobile</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="9mobile">
-                        </p>
-
-                        <p>
-                            <label for="glo">
-                                <img src="./network_img/glo.jpg">
-                                <span>Glo</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="glo">
-                        </p>
+                    
+                    <div class="item">
+                        <img src="/network_img/mtn.jpg">
+                        <div class="text">MTN</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="/network_img/glo.jpg">
+                        <div class="text">GLO</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="/network_img/airtel.jpg">
+                        <div class="text">Airtel</div>
+        
                     </div>
                 </div>
+            </div>
 
                 <!--TopUP part starts-->
 

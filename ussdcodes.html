@@ -25,93 +25,41 @@
             flex-flow: column;
             align-items: center;
             min-height: 100vh;
-            width: 100%;
+            width: 550px;
             margin: auto;
             padding: 1px;
+        }
+
+        .container .sign-out {
+            color: darkred;
+            font-size: 12px;
+            text-decoration: none;
+            margin-top: 30px;
         }
 
         header {
             display: flex;
             justify-content: space-between;
-            background: #12a963;
-            width: 100%;
+            background: #ffff;
+            width: 560px;
             padding: 15px;
             flex-flow: column;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-        }
-
-        header .acc-bal .fa {
-            color: white;
-            font-size: 12px;
-        }
-
-        header .acc-bal .fa:hover {
-            cursor: pointer;
-        }
-
-        header .acc-bal span {
-            color: white;
-            font-size: 12px;
-        }
-
-        header .acc-bal h6 {
             margin-bottom: 10px;
-        }
-
-        header .acc-bal h4 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        header .acc-bal h4 .fa, #acc-balance {
-            font-size: 25px;
-        }
-
-        header .transaction-type {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: auto;
-            width: 60%;
-        }
-
-        header .top-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        header .top-head .head-right-side {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        header .top-head .head-left-side .fa {
-            font-size: 20px;
-            color: white;
-        }
-
-        header .top-head .head-right-side p {
-            font-size: 14px;
-            color: #ffff;
-        }
-
-        header .top-head .head-right-side img {
-            border-radius: 50%;
+            margin-top: 0;
+            
         }
 
         header a {
             font-size: 12px;
             text-decoration: none;
             color: #696969;
+            display: flex;
         }
 
         header  .fa {
-            color: #12a963;
+            color: #696969;
             font-size: 16px;
         }
         
@@ -119,7 +67,30 @@
             width: 100%;
             display: flex;
             flex-flow: column;
-            gap: 15px;
+            gap: 6px;
+        }
+
+        .transaction-list .notification {
+            padding: 15px;
+            background: #12e38137;
+            font-size: 14px;
+            border-radius: 15px;
+            width: 550px;
+            margin: auto;
+            margin-bottom: 10px;
+            color: #696969;
+        }
+
+        .transaction-list .notification span {
+            color: #12a963;
+        }
+
+        .transaction-list p {
+            padding: 8px;
+            color: #696969;
+            line-height: 1.5;
+            font-size: 17px;
+            text-align: center;
         }
 
         .transaction-list a h6, .in-out {
@@ -185,7 +156,17 @@
             padding: 10px;
         }
 
+        .transaction a .transaction-details .fa-regular {
+            color: #12a963;
+            padding: 10px;
+        }
+
         .transaction-2 a .transaction-details .fa {
+            color: #12a963;
+            padding: 10px;
+        }
+
+        .transaction-2 a .transaction-details .fa-regular {
             color: #12a963;
             padding: 10px;
         }
@@ -232,7 +213,7 @@
         }
 
     footer {
-    width: 100%;
+    width: 550px;
     margin: auto;
     bottom: 0;
     padding-top: 170px;
@@ -281,192 +262,229 @@ footer ul li a span {
     <div class="container">
 
         <header>
-           <div class="top-head">
-                <div class="head-right-side">
-                    <div class="prof-img">
-                        <a href="profile/profile.html"><img src="./User.jpg" width="40px" height="40px"></a>
-                    </div>
-                    <p>Hi, <span class="profile_name">VICK</span></p>
-                </div>
-                <div class="head-left-side">
-                    <a href="settings.html">
-                        <i class="fa fa-gear"></i>
-                    </a>
-                </div>
-           </div>
-
-           <div class="acc-bal">
-                <h6>
-                    <span class="avail">Total Balance
-                    </span>
-                    <span>
-                        <i name="button" id="1" class="fa fa-eye"></i>
-                    </span>
-                </h6>
-                <h4><i class="fa fa-naira-sign"></i><span id="acc-balance">0.00</span>
-                </h4>
-        </div>
-
+            <div class="top-head">
+                <a href="me.html">
+                    <span><i class="fa fa-angle-left"></i></span>
+                    &nbsp; Quick Payments with Opay USSD
+                </a>
+            </div>
         </header>
 
-            <div class="transaction-list">
+        <div class="transaction-list">
+
+            <p>Enjoy a fast and secure way to access Opay services via our USSD channel by dailing *955# and other codes below</p>
+
+            <div class="notification">
+                Please be informed that dailing thesecodes, excludig OTP,airtime and data codes, will incur a service fee of <span><i class="fa fa-naira-sign"></i>10</span>
+            </div> 
 
                 <div class="transaction">
-                    <a href="transaction.html">
+
+                    <a href="tel:">
                         <div class="transaction-details">
-                            <i class="fa fa-calendar-alt"></i>
+                            <i class="fa fa-coins"></i>
                             <h6>
-                                Transaction History
+                                Transfer to Bank Account
+                                <span>*955*2*amount*10 digit account no#</span>
                             </h6>
                         </div>
 
                         <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
+                            <i class="fa fa-phone"></i>
                         </div>
                     </a>
 
-                    <a href="#">
+                    <a href="tel:">
                         <div class="transaction-details">
-                            <i class="fa fa-bank"></i>
+                            <i class="fa fa-coins"></i>
                             <h6>
-                                Account Limits
-                                <span>View your transaction limits</span>
+                                Transfer to Opay Account
+                                <span>*955*1*amount*10 digit account no#</span>
                             </h6>
                         </div>
 
                         <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
+                            <i class="fa fa-phone"></i>
                         </div>
                     </a>
 
-                    <a href="#">
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:">
+                        <div class="transaction-details">
+                            <i class="fa fa-mobile-alt"></i>
+                            <h6>
+                                Airtime for self
+                                <span>*955*3* amount#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                    <a href="tel:">
+                        <div class="transaction-details">
+                            <i class="fa fa-mobile-alt"></i>
+                            <h6>
+                                Airtime for Others
+                                <span>*955*3* amount*mobile no.#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:">
+                        <div class="transaction-details">
+                            <i class="fa fa-mobile-alt"></i>
+                            <h6>
+                                Data
+                                <span>*955*3* mobile no. #</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A5%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-dice"></i>
+                            <h6>
+                                Betting
+                                <span>*955*5#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A6%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-bolt"></i>
+                            <h6>
+                                Electricity
+                                <span>*955*6#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A0%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-wallet"></i>
+                            <h6>
+                                Check Balance
+                                <span>*955*0#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A03121%23">
                         <div class="transaction-details">
                             <i class="fa fa-credit-card"></i>
                             <h6>
-                                Bank Card/Account
-                                <span>Add payment option</span>
+                                Card Activation
+                                <span>*955*03121#</span>
                             </h6>
                         </div>
 
                         <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-bank"></i>
-                            <h6>
-                                Pay Me
-                                <span>Recieve payment for your business</span>
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-id-card"></i>
-                            <h6>
-                                Pay Id
-                                <span>Generate unique code for online transactions</span>
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                </div>
-
-                <div class="transaction-2">
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-shield"></i>
-                            <h6>
-                                Security Center
-                                <span>Protect your funds</span>
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="ussdcodes.html">
-                        <div class="transaction-details">
                             <i class="fa fa-phone"></i>
-                            <h6>
-                                Opay USSD
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-headphones-alt"></i>
-                            <h6>
-                                Customer service Center
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-handshake"></i>
-                            <h6>
-                                Refer Friends
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-star"></i>
-                            <h6>
-                                Rate Us
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
                         </div>
                     </a>
 
                 </div>
-            </div>
-        </div>
 
-        <footer>
-            <ul>
-                <li><a href="index.html"><i class="fa fa-circle-user"></i><span>Home</span></a></li>
+                <div class="transaction">
 
-                <li><a href="/"><i class="fa fa-gift"></i><span>Reward</span></a></li>
+                    <a href="tel:%2A955%2A010%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-message"></i>
+                            <h6>
+                                Get OTP
+                                <span>*955*010#</span>
+                            </h6>
+                        </div>
 
-                <li><a href="/"><i class="fa fa-chart-line"></i><span>Finance</span></a></li>
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
 
-                <li><a href="/"><i class="fa fa-credit-card"></i><span>Cards</span></a></li>
+                </div>
 
-                <li><a href="me.html"><i class="fa fa-face-grin-wide"></i><span>Me</span></a></li>
-            </ul>
-        </footer>
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A131%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-lock"></i>
+                            <h6>
+                                Restrict/Unrestrict Account
+                                <span>*955*131#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="transaction">
+
+                    <a href="tel:%2A955%2A132%23">
+                        <div class="transaction-details">
+                            <i class="fa fa-credit-card-alt"></i>
+                            <h6>
+                                Block/Unblock Card
+                                <span>*955*132#</span>
+                            </h6>
+                        </div>
+
+                        <div class="transaction-amount">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </a>
+
+                </div>
 
         
     </div>

@@ -126,15 +126,14 @@
             border-radius: 15px;
             display: flex;
             flex-flow: column;
-            width: 95%;
+            width: 100%;
             margin: auto;
             margin-top: 10px;
-            z-index: 1;
             transition: all 1s ease-in-out;
         }
 
         .top-up.show-index {
-            z-index: -1;
+            opacity: 0;
         }
 
         .top-up p input {
@@ -146,23 +145,108 @@
             font-size: 11px;
         }
 
-        /* Networks */
+        /* drop-down */
 
-        .networks {
+        .drop-down {
+            position: relative;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5px 10px 5px 10px; 
+            background: #fff;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.222);
             width: 500px;
-            gap: 10px;
-            background-color: white;
+            padding: 0px 10px 0px 10px;
             border-radius: 20px;
-            position: relative;
-            transition: all 1s ease-in-out;
+            gap: 10px;
         }
 
-        .packages {
+        .drop-down .fa-user {
+            color: white;
+            background: #12a963;
+            padding: 7px;
+            border-radius: 50%;
+        }
+
+        .drop-down .fa-user:hover {
+            cursor: pointer;
+        }
+
+        .drop-down input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 95%;
+            padding: 5px;
+        }
+
+        .wrapper .selectGame {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .drop-down:hover {
+            cursor: pointer;
+        }
+
+        .wrapper img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .list {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            max-height: 0px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.322);
+            padding: 0px;
+            overflow-y: scroll;
+            border-radius: 10px;
+            transition: all 1s;
+        }
+
+        .list.show {
+            max-height: 385px;
+            z-index: 1;
+        }
+
+        .list .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 10px;
+            margin-top: 0px;
+            border-bottom: 1px solid #9c9c9c61;
+        }
+
+        .list .item:hover {
+            background-color: #12a96334;
+            cursor: pointer;
+        }
+
+        .list .item  img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        /* Packages */
+
+        .package-drop-down {
             margin: auto;
             display: flex;
             align-items: start;
@@ -170,14 +254,18 @@
             padding: 5px 10px 5px 10px; 
             width: 100%;
             gap: 10px;
-            background-color: white;
+            background: white;
             border-radius: 20px;
             position: relative;
             transition: all 1s ease-in-out;
             flex-flow: column;
         }
 
-        .packages .pack-p {
+        .package-drop-down:hover {
+            cursor: pointer;
+        }
+
+        .package-drop-down .pack-p {
             font-size: 14px;
         }
 
@@ -186,7 +274,7 @@
             cursor: pointer;
         } */
 
-        .networks .img {
+        .package-drop-down .img {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -194,193 +282,84 @@
             width: 100%;
         }
 
-        .packages .img {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .networks .img:hover {
+        .package-drop-down .img:hover {
             cursor: pointer;
         }
 
-        .packages .img:hover {
-            cursor: pointer;
-        }
-
-
-        .networks .img .fa {
+        .package-drop-down .img .fa {
             font-size: 11px;
             color: #9c9c9c;
         }
 
-        .packages .img .fa {
-            font-size: 11px;
-            color: #9c9c9c;
-        }
-
-        .networks input {
+        .package-drop-down input {
             border-top: none;
             border-bottom: 1px solid #9c9c9c15;
             background: transparent;
             width: 80%;
         }
 
-        .packages input {
-            border-top: none;
-            border-bottom: 1px solid #9c9c9c15;
-            background: transparent;
-            width: 80%;
-        }
-
-        .networks .fa-user {
+        .package-drop-down .fa-user {
             color: white;
             background: #12a963;
             padding: 7px;
             border-radius: 50%;
         }
 
-        .packages .fa-user {
-            color: white;
-            background: #12a963;
-            padding: 7px;
-            border-radius: 50%;
-        }
-
-        .networks .network-options {
-            position: absolute;
-            top: 90%;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 15px;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-            color: #00000059;
-            height: 330px;
-            overflow-y: auto;
-        }
-
-        .packages .package-options {
-            position: absolute;
-            top: 90%;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 15px;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-            color: #00000059;
-            height: 330px;
-            overflow-y: auto;
-        }
-
-        .package-options p .price {
-            font-size: 11px;
+        .package-drop-down .package-wrapper {
             display: flex;
             align-items: center;
-            gap: 5px;
-            color: #181818;
-        }
-
-        .network-options.show {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .package-options.show {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .networks .network-options img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-
-        .packages .package-options img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-
-        .networks .network-options p {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f7f7f7;
-            margin: 5px;
-            border-radius: 10px;
-        }
-
-        .packages .package-options p {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f7f7f7;
-            margin: 5px;
-            border-radius: 10px;
-        }
-
-        .networks .network-options p:hover {
-            cursor: pointer;
-        }
-
-        .packages .package-options p:hover {
-            cursor: pointer;
-        }
-
-        .networks .network-options p .input {
-            width: 20px;
-        }
-
-        .packages .package-options p .input {
-            width: 20px;
-        }
-
-        .networks .network-options p label {
-            display: flex;
-            align-items: center;
             gap: 10px;
-        }
-
-        .packages .package-options p label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .networks .img img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-
-        .packages .img img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-
-        .choose-package {
-            background: #9c9c9c0e;
+            width: 100%;
             padding: 10px 15px 0px 15px;
+            background: #efefef91;
+            border-radius: 15px;
+            margin: auto;
+        }
+
+        .package-wrapper .selected-pack {
+            color: #696969;
+        }
+
+        .package-list {
+            position: absolute;
+            top: 75px;
+            left: 0;
+            width: 100%;
+            max-height: 0px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.322);
+            padding: 0px;
+            overflow-y: scroll;
             border-radius: 10px;
-            text-align: center;
+            transition: all 1s;
         }
 
-        .choose-package h6 {
-            color: #9c9c9c;
+        .package-list.show {
+            max-height: 390px
         }
 
-        /* package plans*/
+        .package-list .package-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 18px 10px;
+            margin-top: 0px;
+            border-bottom: 1px solid #9c9c9c61;
+            font-size: 12px;
+        }
 
+        .package-list .package-item:hover {
+            background-color: #12a96334;
+            cursor: pointer;
+        }
 
+        .package-list .package-item  img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
         
     </style>
 
@@ -398,49 +377,49 @@
 
         <form method="post">
             <h6 style="margin-left: 25px;">Select Provider</h6>
-                <div class="networks">
-                    <div class="choose-network img">
-                        <img src="./cable-img/startimes.jpeg" alt="startimes icon">
-                        <i class="fa fa-angle-right"></i>
+            <div class="drop-down">
+                <div class="wrapper">
+
+                    <div class="selectGame">
+                        <img src="./cable-img/gotv.jpg" class="selectedImg">
+                    <div class="selected">GOTV</div>
                     </div>
-
-                    <!--Network Options-->
-
-                    <div class="network-options">
-                        <p>
-                            <label for="Dstv">
-                                <img src="./cable-img/dstv.jpeg">
-                                <span>Dstv</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Dstv">
-                        </p>
-
-                        <p>
-                            <label for="Gotv">
-                                <img src="./cable-img/gotv.jpg">
-                                <span>Gotv</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Gotv">
-                        </p>
-
-                        <p>
-                            <label for="Showmax">
-                                <img src="./cable-img/showmax.png">
-                                <span>Showmax</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Showmax">
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <img src="./cable-img/startimes.jpeg">
-                                <span>Startimes</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Startimes">
-                        </p>
-
-                    </div>
+                    <i class="fa fa-sort-down"></i>
+                    
                 </div>
+                
+                <!-- <input type="number" name="number" placeholder="0XX XXXX XXXX">
+                <i class="fa fa-user"></i> -->
+        
+                <div class="list">
+                    
+                    <div class="item">
+                        <img src="./cable-img/dstv.jpeg">
+                        <div class="text">DSTV</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./cable-img/gotv.jpg">
+                        <div class="text">GOTV</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./cable-img/showmax.png">
+                        <div class="text">Showmax</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./cable-img/startimes.jpeg">
+                        <div class="text">Startimes</div>
+        
+                    </div>
+                    
+                    
+                </div>
+            </div>
 
             <div class="top-up">
                 <p>
@@ -448,95 +427,51 @@
                     <input type="number" name="number" placeholder="Input your smart number here">
                 </p>
 
-                <div class="packages">
+                <div class="package-drop-down">
                     <p class="pack-p">Packages</p>
-                    <div class="choose-package img">
-                        <h6>Please select your package</h6>
-                        <i class="fa fa-angle-down"></i>
+                    <div class="package-wrapper">
+                        <h6 class="selected-pack">Please select your package</h6>
+                        <div class="selectedImg-pack">
+                            <i class="fa fa-angle-down"></i>
+                        </div>
                     </div>
 
                     <!--Package Options-->
 
-                    <div class="package-options">
-                        <p>
-                            <label for="Dstv">
-                                <span>Gotv Supa</span>
-                            </label>
-                            <span class="price">
+                    <div class="package-list">
+                        
+                        <div class="package-item">
+                            <span class="package-img">Gotv Max</span>
+                            <div class="package-text">
                                 <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Dstv">
-                            </span>
-                        </p>
+                            </div>
+            
+                        </div>
+                        
+                        <div class="package-item">
+                            <span class="package-img">Gotv Jollof</span>
+                            <div class="package-text">
+                                <i class="fa fa-naira-sign"></i>1,700
+                            </div>
+            
+                        </div>
+                        
+                        <div class="package-item">
+                            <span class="package-img">Gotv Max</span>
+                            <div class="package-text">
+                                <i class="fa fa-naira-sign"></i>1,700
+                            </div>
+            
+                        </div>
+                        
+                        <div class="package-item">
+                            <span class="package-img">Gotv Max</span>
+                            <div class="package-text">
+                                <i class="fa fa-naira-sign"></i>1,700
+                            </div>
+            
+                        </div>
 
-                        <p>
-                            <label for="Gotv">
-                                <span>Gotv Max</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Gotv">
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Showmax">
-                                <span>Gotv Jolli</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Showmax"> 
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <span>Gotv Jinja</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Startimes">
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <span>Gotv Lite</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Startimes">
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <span>Gotv Lite(Quarterly)</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Startimes">
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <span>Gotv Lite(Annual)</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Startimes">
-                            </span>
-                        </p>
-
-                        <p>
-                            <label for="Startimes">
-                                <span>Gotv Supa Plus</span>
-                            </label>
-                            <span class="price">
-                                <i class="fa fa-naira-sign"></i>1,700
-                                <input class="input" type="radio" name="package" id="Startimes">
-                            </span>
-                        </p>
 
                     </div>
                 </div>

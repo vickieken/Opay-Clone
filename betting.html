@@ -75,7 +75,29 @@
             font-size: 11px;
         }
 
-         h6 {
+        .user-id {
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            background: #fff;
+            padding: 10px;
+            width: 500px;
+            margin-top: 15px;
+            border-radius: 15px;
+            box-shadow: 0 3px 3px rgba(0,0,0,0.222);
+        }
+
+        .user-id input {
+            width: 100%;
+        }
+
+        .user-id h5 {
+            font-weight: lighter;
+            margin-left: 10px;
+            padding-bottom: 5px;
+        }
+
+        h6 {
             font-weight: lighter;
             color: #181818;
             margin-bottom: 15px;
@@ -133,13 +155,18 @@
         }
 
         .top-up .box-con .box {
-            background: #fafafa;
+            background: #f4f4f4;
             border-radius: 10px;
             display: flex;
             flex-flow: column;
             align-items: center;
             width: 100%;
             padding: 20px 35px;
+        }
+
+        .top-up .box-con .box:hover {
+            cursor: pointer;
+            filter: brightness(95%);
         }
 
         /* .top-up .box-con .box:hover {
@@ -178,7 +205,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 20px;
-            z-index: 1;
+            /* z-index: 1; */
             transition: all 1s ease-in-out;
         }
 
@@ -221,110 +248,102 @@
             cursor: pointer;
         }
 
-        /* Networks */
+        /* drop-down */
 
-        .networks {
+        .drop-down {
+            position: relative;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4px 10px 4px 10px; 
+            background: #fff;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.222);
             width: 500px;
-            gap: 10px;
-            background-color: white;
+            padding: 0px 10px 0px 10px;
             border-radius: 20px;
-            position: relative;
-            transition: all 1s ease-in-out;
-        }
-
-        /* .networks:hover .network-options {
-            visibility: visible;
-            cursor: pointer;
-        } */
-
-        .networks .img {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             gap: 10px;
-            width: 100%;
         }
 
-        .networks .img:hover {
-            cursor: pointer;
-        }
-
-
-        .networks .img .fa {
-            font-size: 11px;
-            color: #9c9c9c;
-        }
-
-        .networks input {
-            border-top: none;
-            border-bottom: 1px solid #9c9c9c15;
-            background: transparent;
-            width: 80%;
-        }
-
-        .networks .fa-user {
+        .drop-down .fa-user {
             color: white;
             background: #12a963;
             padding: 7px;
             border-radius: 50%;
         }
 
-        .networks .fa-user:hover {
+        .drop-down .fa-user:hover {
             cursor: pointer;
         }
 
-        .networks .network-options {
-            position: absolute;
-            top: 90%;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 15px;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-            color: #00000059;
-            height: 390px;
-            overflow-y: auto;
+        .drop-down input {
+            border-top: none;
+            border-bottom: 1px solid #9c9c9c15;
+            background: transparent;
+            width: 80%;
+            margin-top: 10px;
         }
 
-        .network-options.show {
-            opacity: 1;
-            z-index: 1;
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 95%;
+            padding: 5px;
         }
 
-        .networks .network-options img {
-            width: 32px;
-            height: 32px;
+        .wrapper .selectGame {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .drop-down:hover {
+            cursor: pointer;
+        }
+
+        .wrapper img {
+            height: 40px;
+            width: 40px;
             border-radius: 50%;
         }
 
-        .networks .network-options p {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f7f7f7;
-            margin: 5px;
+        .list {
+            position: absolute;
+            top: 66px;
+            left: 0;
+            width: 100%;
+            max-height: 0px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.322);
+            padding: 0px;
+            overflow-y: scroll;
             border-radius: 10px;
+            transition: all 1s;
         }
 
-        .networks .network-options p:hover {
-            cursor: pointer;
+        .list.show {
+            max-height: 385px
         }
 
-        .networks .network-options p .input {
-            width: 20px;
-        }
-
-        .networks .network-options p label {
+        .list .item {
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 18px 10px;
+            margin-top: 0px;
+            border-bottom: 1px solid #9c9c9c61;
+        }
+
+        .list .item:hover {
+            background-color: #12a96334;
+            cursor: pointer;
+        }
+
+        .list .item  img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
         }
 
 
@@ -381,88 +400,76 @@
         </div>
 
         <form method="post">
-                <div class="networks">
-                    <div class="choose-network img">
-                        <img src="./betting_img/betting-img-3.jpg" alt="mtn icon">
-                        <i class="fa fa-angle-right"></i>
+            <div class="drop-down">
+                <div class="wrapper">
+
+                    <div class="selectGame">
+                        <img src="./betting_img/betting-img-1.jpg" class="selectedImg">
+                    <div class="selected">Live Score</div>
                     </div>
-
-                    <!--Network Options-->
-
-                    <div class="network-options">
-                        <p>
-                            <label for="live score">
-                                <img src="./betting_img/betting-img-1.jpg">
-                                <span>Live Score</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="live score">
-                        </p>
-
-                        <p>
-                            <label for="1XBet">
-                                <img src="./betting_img/betting-img-2.jpg">
-                                <span>1XBet</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="1XBet">
-                        </p>
-
-                        <p>
-                            <label for="Bet365">
-                                <img src="./betting_img/betting-img-4.jpg">
-                                <span>Bet365</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Bet365">
-                        </p>
-
-                        <p>
-                            <label for="125Bet">
-                                <img src="./betting_img/betting-img-5.jpg">
-                                <span>125Bet</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="125Bet">
-                        </p>
-
-                        <p>
-                            <label for="MSport">
-                                <img src="./betting_img/betting-img-6.png">
-                                <span>MSport</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="MSport">
-                        </p>
-
-                        <p>
-                            <label for="Sporty Bet">
-                                <img src="./betting_img/betting-img-7.jpeg">
-                                <span>Sporty Bet</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Sporty Bet">
-                        </p>
-
-                        <p>
-                            <label for="Bet King">
-                                <img src="./betting_img/betting-img-8.png">
-                                <span>Bet King</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Bet King">
-                        </p>
-
-                        <p>
-                            <label for="Bang Bet">
-                                <img src="./betting_img/betting-img-9.jpeg">
-                                <span>Bang Bet</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Bang Bet">
-                        </p>
-
-                        <p>
-                            <label for="Live Score Bet">
-                                <img src="./betting_img/betting-img-10.png">
-                                <span>Live Score Bet</span>
-                            </label>
-                            <input class="input" type="radio" name="network" id="Live Score Bet">
-                        </p>
+                    <i class="fa fa-sort-down"></i>
+                    
+                </div>
+                
+                <!-- <input type="number" name="number" placeholder="0XX XXXX XXXX">
+                <i class="fa fa-user"></i> -->
+        
+                <div class="list">
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-1.jpg">
+                        <div class="text">Live Score</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="/betting_img/betting-img-10.png">
+                        <div class="text">Live Score Bet</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-2.jpg">
+                        <div class="text">1XBet</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-3.jpg">
+                        <div class="text">Bet 9ja</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-4.jpg">
+                        <div class="text">Bet365</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="/betting_img/betting-img-6.png">
+                        <div class="text">Msport</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-7.jpeg">
+                        <div class="text">Sporty Bet</div>
+        
+                    </div>
+                    
+                    <div class="item">
+                        <img src="./betting_img/betting-img-8.png">
+                        <div class="text">Bet King</div>
+        
                     </div>
                 </div>
+            </div>
+
+            <div class="user-id"> 
+                <h5>User ID</h5>
+                <input type="number" placeholder="Enter User ID">
+            </div>
 
             <div class="top-up">
                 <h6 class="top">Select Amount</h6>

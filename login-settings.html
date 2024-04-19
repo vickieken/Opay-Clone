@@ -25,7 +25,7 @@
             flex-flow: column;
             align-items: center;
             min-height: 100vh;
-            width: 100%;
+            width: 550px;
             margin: auto;
             padding: 1px;
         }
@@ -33,85 +33,26 @@
         header {
             display: flex;
             justify-content: space-between;
-            background: #12a963;
-            width: 100%;
+            background: #ffff;
+            width: 560px;
             padding: 15px;
             flex-flow: column;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-        }
-
-        header .acc-bal .fa {
-            color: white;
-            font-size: 12px;
-        }
-
-        header .acc-bal .fa:hover {
-            cursor: pointer;
-        }
-
-        header .acc-bal span {
-            color: white;
-            font-size: 12px;
-        }
-
-        header .acc-bal h6 {
             margin-bottom: 10px;
-        }
-
-        header .acc-bal h4 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        header .acc-bal h4 .fa, #acc-balance {
-            font-size: 25px;
-        }
-
-        header .transaction-type {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: auto;
-            width: 60%;
-        }
-
-        header .top-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        header .top-head .head-right-side {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        header .top-head .head-left-side .fa {
-            font-size: 20px;
-            color: white;
-        }
-
-        header .top-head .head-right-side p {
-            font-size: 14px;
-            color: #ffff;
-        }
-
-        header .top-head .head-right-side img {
-            border-radius: 50%;
+            margin-top: 0;
+            
         }
 
         header a {
             font-size: 12px;
             text-decoration: none;
             color: #696969;
+            display: flex;
         }
 
         header  .fa {
-            color: #12a963;
+            color: #696969;
             font-size: 16px;
         }
         
@@ -119,7 +60,7 @@
             width: 100%;
             display: flex;
             flex-flow: column;
-            gap: 15px;
+            gap: 10px;
         }
 
         .transaction-list a h6, .in-out {
@@ -158,6 +99,13 @@
         .transaction-2 {
             border-radius: 15px;
             background: white;
+        }
+
+        .transaction-list h5 {
+            margin-left: 10px;
+            font-weight: 560;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         .transaction-2 a {
@@ -232,7 +180,7 @@
         }
 
     footer {
-    width: 100%;
+    width: 550px;
     margin: auto;
     bottom: 0;
     padding-top: 170px;
@@ -281,42 +229,23 @@ footer ul li a span {
     <div class="container">
 
         <header>
-           <div class="top-head">
-                <div class="head-right-side">
-                    <div class="prof-img">
-                        <a href="profile/profile.html"><img src="./User.jpg" width="40px" height="40px"></a>
-                    </div>
-                    <p>Hi, <span class="profile_name">VICK</span></p>
-                </div>
-                <div class="head-left-side">
-                    <a href="settings.html">
-                        <i class="fa fa-gear"></i>
-                    </a>
-                </div>
-           </div>
-
-           <div class="acc-bal">
-                <h6>
-                    <span class="avail">Total Balance
-                    </span>
-                    <span>
-                        <i name="button" id="1" class="fa fa-eye"></i>
-                    </span>
-                </h6>
-                <h4><i class="fa fa-naira-sign"></i><span id="acc-balance">0.00</span>
-                </h4>
-        </div>
-
+            <div class="top-head">
+                <a href="settings.html">
+                    <span><i class="fa fa-angle-left"></i></span>
+                    &nbsp; Login
+                </a>
+            </div>
         </header>
 
             <div class="transaction-list">
 
-                <div class="transaction">
-                    <a href="transaction.html">
+
+                <h5>Password</h5>
+                <div class="transaction-2">
+                    <a href="#">
                         <div class="transaction-details">
-                            <i class="fa fa-calendar-alt"></i>
                             <h6>
-                                Transaction History
+                                Change Password
                             </h6>
                         </div>
 
@@ -327,10 +256,8 @@ footer ul li a span {
 
                     <a href="#">
                         <div class="transaction-details">
-                            <i class="fa fa-bank"></i>
                             <h6>
-                                Account Limits
-                                <span>View your transaction limits</span>
+                                Forgot Password
                             </h6>
                         </div>
 
@@ -341,38 +268,8 @@ footer ul li a span {
 
                     <a href="#">
                         <div class="transaction-details">
-                            <i class="fa fa-credit-card"></i>
                             <h6>
-                                Bank Card/Account
-                                <span>Add payment option</span>
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-bank"></i>
-                            <h6>
-                                Pay Me
-                                <span>Recieve payment for your business</span>
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-id-card"></i>
-                            <h6>
-                                Pay Id
-                                <span>Generate unique code for online transactions</span>
+                                Remember Password
                             </h6>
                         </div>
 
@@ -383,13 +280,12 @@ footer ul li a span {
 
                 </div>
 
+                <h5>Biometric Login</h5>
                 <div class="transaction-2">
                     <a href="#">
                         <div class="transaction-details">
-                            <i class="fa fa-shield"></i>
                             <h6>
-                                Security Center
-                                <span>Protect your funds</span>
+                                Login in with Fingerprint
                             </h6>
                         </div>
 
@@ -398,50 +294,14 @@ footer ul li a span {
                         </div>
                     </a>
 
-                    <a href="ussdcodes.html">
-                        <div class="transaction-details">
-                            <i class="fa fa-phone"></i>
-                            <h6>
-                                Opay USSD
-                            </h6>
-                        </div>
+                </div>
 
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
+                <h5>Pattern</h6>
+                <div class="transaction-2">
                     <a href="#">
                         <div class="transaction-details">
-                            <i class="fa fa-headphones-alt"></i>
                             <h6>
-                                Customer service Center
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-handshake"></i>
-                            <h6>
-                                Refer Friends
-                            </h6>
-                        </div>
-
-                        <div class="transaction-amount">
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="transaction-details">
-                            <i class="fa fa-star"></i>
-                            <h6>
-                                Rate Us
+                                Set up Pattern
                             </h6>
                         </div>
 
@@ -452,23 +312,7 @@ footer ul li a span {
 
                 </div>
             </div>
-        </div>
 
-        <footer>
-            <ul>
-                <li><a href="index.html"><i class="fa fa-circle-user"></i><span>Home</span></a></li>
-
-                <li><a href="/"><i class="fa fa-gift"></i><span>Reward</span></a></li>
-
-                <li><a href="/"><i class="fa fa-chart-line"></i><span>Finance</span></a></li>
-
-                <li><a href="/"><i class="fa fa-credit-card"></i><span>Cards</span></a></li>
-
-                <li><a href="me.html"><i class="fa fa-face-grin-wide"></i><span>Me</span></a></li>
-            </ul>
-        </footer>
-
-        
     </div>
 
     <script src="header.js"></script>
