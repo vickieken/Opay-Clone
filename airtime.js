@@ -33,6 +33,8 @@ wrapper.addEventListener("click", ()=> {
 item.forEach(item => {
     item.addEventListener("click", ()=> {
         list.classList.toggle('show');
+
+        amountEL.classList.toggle('show-amount-index');
     })
 })
 
